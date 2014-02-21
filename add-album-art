@@ -1,0 +1,21 @@
+#!/usr/bin/python
+
+from mutagen.mp4 import MP4, MP4Cover
+import sys
+
+if(len(sys.argv) != 3):
+    print "Usage: audio-length <audio-filename> <album-art-filename>"
+    sys.exit(1)
+
+audio = MP4(sys.argv[1])
+albumart = sys.argv[2]
+imgdata = open(albumart, 'rb').read()
+
+cover = []
+fmt = MP4Cover.FORMAT_JPEG
+if albumart.endswith('png'):
+    fmt = MP4Cover.FORMAT_PNG
+cover.append(MP4Cover(imgdata, fmt))
+audio.tags['covr'] = cover
+audio.save()
+

@@ -1,0 +1,12 @@
+#!/usr/bin/python
+
+from mutagen.mp4 import MP4
+import sys
+
+if(len(sys.argv) != 2):
+    print "Usage: audio-length <filename>"
+    sys.exit(1)
+
+audio = MP4(sys.argv[1])
+len = audio.info.length
+print int(round(len))
