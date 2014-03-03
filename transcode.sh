@@ -8,7 +8,7 @@ echo "Input file: " $IN
 echo "Output file: " $OUT
 
 # Transcode
-ffmpeg -i "$IN" -c:a libfaac -vn -b:a 64k "$OUT"
+ffmpeg -i "$IN" -c:a libfaac -vn -b:a 64k -movflags faststart "$OUT"
 
 echo "Done transcoding"
 echo "Adding album art..."
