@@ -1,7 +1,7 @@
 making-friends-episode-prep
 ===========================
 
-A script that takes an input MP3 file and outputs an M4A with album art for Making Friends.
+A script to transcode MP3 file to M4A with album art for Making Friends.
 
 Usage
 ---
